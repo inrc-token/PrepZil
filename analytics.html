@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head, Header (like dashboard.html), Footer (like dashboard.html) -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Analytics -  PrepZil</title>
+    <link rel="stylesheet" href="\css\styles.css">
+    <!-- Add a Charting library CDN if you want visual charts (Optional, adds complexity) -->
+    <!-- e.g., <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+</head>
+<body>
+    <!-- Add Header (similar to dashboard.html, adjust active link) -->
+    <header class="main-header">
+         <!-- ... header content ... -->
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="mock-tests.html">Mock Tests</a></li>
+                <li><a href="discussions.html">Discussions</a></li>
+                <li><a href="analytics.html" class="active">Analytics</a></li>
+            </ul>
+        </nav>
+         <!-- ... profile & mobile toggle ... -->
+    </header>
+
+    <main class="container">
+        <h1>Your Performance Analytics</h1>
+
+        <section class="card analytics-section">
+            <h2>Overall Score Trend</h2>
+            <!-- Placeholder for a chart - difficult without JS library -->
+            <div class="chart-placeholder">
+                <p>(Chart showing score improvement over time would go here)</p>
+                 <img src="https://via.placeholder.com/600x200.png?text=Score+Trend+Chart" alt="Placeholder Score Trend Chart" style="max-width: 100%; height: auto;">
+            </div>
+        </section>
+
+        <section class="card analytics-section">
+            <h2>Performance by Subject</h2>
+             <!-- Placeholder for another chart -->
+             <div class="chart-placeholder">
+                 <p>(Chart showing average scores per subject would go here)</p>
+                 <img src="https://via.placeholder.com/600x200.png?text=Subject+Performance+Chart" alt="Placeholder Subject Performance Chart" style="max-width: 100%; height: auto;">
+            </div>
+            <ul>
+                <li>Physics: Average 75%</li>
+                <li>Chemistry: Average 68%</li>
+                <li>Mathematics: Average 82%</li>
+            </ul>
+        </section>
+
+        <section class="card analytics-section">
+            <h2>Test History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Test Name</th>
+                        <th>Date Taken</th>
+                        <th>Score</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Physics Mock Test 1</td>
+                        <td>Oct 25, 2023</td>
+                        <td>80%</td>
+                        <td><a href="#">View Report</a></td> <!-- Links won't show real reports -->
+                    </tr>
+                     <tr>
+                        <td>Chemistry Mock Test 1</td>
+                        <td>Oct 20, 2023</td>
+                        <td>65%</td>
+                        <td><a href="#">View Report</a></td>
+                    </tr>
+                    <!-- Add more static history -->
+                </tbody>
+            </table>
+        </section>
+
+         <section class="card analytics-section">
+            <h2>Identified Areas</h2>
+            <div class="strengths">
+                <h3>Strengths <span class="emoji">💪</span></h3>
+                <ul>
+                    <li>Algebra (Math)</li>
+                    <li>Kinematics (Physics)</li>
+                </ul>
+            </div>
+             <div class="weaknesses">
+                <h3>Areas for Improvement <span class="emoji">🎯</span></h3>
+                <ul>
+                     <li>Organic Chemistry (Chemistry)</li>
+                     <li>Thermodynamics (Physics)</li>
+                 </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Add Footer (like dashboard.html) -->
+    <footer class="main-footer">
+        <!-- ... footer content ... -->
+    </footer>
+
+    <script src="\js\script.js"></script>
+     <!-- Optional: JS for initializing charts if using a library -->
+</body>
+</html>

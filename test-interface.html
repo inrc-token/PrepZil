@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test In Progress -  PrepZil</title>
+    <link rel="stylesheet" href="\css\styles.css">
+</head>
+<body class="test-mode">
+    <header class="test-header">
+        <span class="test-title">Physics Mock Test 1</span>
+        <div class="timer-container">
+            Time Remaining: <span id="timer">60:00</span>
+        </div>
+        <span class="question-counter">Question <span id="current-q">1</span> / <span id="total-q">20</span></span>
+    </header>
+
+    <main class="test-main">
+        <div class="question-container">
+            <h2 id="question-text">Q1: What is the standard unit of force?</h2>
+            <div class="options-container">
+                <label class="option">
+                    <input type="radio" name="q1" value="a"> Joule
+                </label>
+                 <label class="option">
+                    <input type="radio" name="q1" value="b"> Watt
+                </label>
+                 <label class="option">
+                    <input type="radio" name="q1" value="c"> Newton
+                </label>
+                 <label class="option">
+                    <input type="radio" name="q1" value="d"> Pascal
+                </label>
+            </div>
+        </div>
+    </main>
+
+    <footer class="test-footer">
+        <button class="btn btn-secondary" id="prev-btn" disabled>Previous</button>
+        <button class="btn btn-secondary" id="mark-review-btn">Mark for Review</button>
+        <button class="btn btn-primary" id="next-btn">Next</button>
+        <button class="btn btn-danger" id="submit-test-btn" style="display: none;">Submit Test</button> <!-- Show only on last Q -->
+    </footer>
+
+    <!-- Basic JS needed for navigation simulation, timer -->
+    <script src="\js\script.js"></script>
+    <script>
+        // Basic Timer Example (will reset on page load)
+        let time = 3600; // 60 minutes in seconds
+        const timerEl = document.getElementById('timer');
+        const interval = setInterval(() => {
+            if (!timerEl) {
+                clearInterval(interval);
+                return;
+            }
+            time--;
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (time <= 0) {
+                clearInterval(interval);
+                alert('Time Up!');
+                // Add logic to auto-submit (won't work without backend)
+                window.location.href = 'analytics.html'; // Simulate submission
+            }
+        }, 1000);
+
+        // --- Mock Test Navigation Simulation ---
+        // In a real app, this would fetch questions via JS/API
+        const questions = [
+            { q: "Q1: What is the standard unit of force?", o: ["Joule", "Watt", "Newton", "Pascal"] },
+            { q: "Q2: What is the formula for kinetic energy?", o: ["mgh", "1/2 mv^2", "F = ma", "P = IV"] },
+            // ... add more questions (up to 20 for this example)
+             { q: "Q20: Final question example?", o: ["A", "B", "C", "D"] }
+        ];
+        const totalQuestions = questions.length; // Adjust if different from 20
+        let currentQuestionIndex = 0;
+
+        const questionTextEl = document.getElementById('question-text');
+        const optionsContainerEl = document.querySelector('.options-container');
+        const currentQEl = document.getElementById('current-q');
+        const totalQEl = document.getElementById('total-q');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-test-btn');
+
+        function displayQuestion(index) {
+            const qData = questions[index];
+            questionTextEl.textContent = qData.q;
+            optionsContainerEl.innerHTML = ''; // Clear previous options
+            qData.o.forEach((option, i) => {
+                const label = document.createElement('label');
+                label.className = 'option';
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = `q${index + 1}`;
+                input.value = String.fromCharCode(97 + i); // a, b, c...
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(` ${option}`));
+                optionsContainerEl.appendChild(label);
+            });
+            currentQEl.textContent = index + 1;
+            totalQEl.textContent = totalQuestions;
+
+            // Button states
+            prevBtn.disabled = index === 0;
+            nextBtn.style.display = index === totalQuestions - 1 ? 'none' : 'inline-block';
+            submitBtn.style.display = index === totalQuestions - 1 ? 'inline-block' : 'none';
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentQuestionIndex < totalQuestions - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        });
+
+         submitBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to submit the test?')) {
+                 clearInterval(interval); // Stop timer
+                 // No real submission, just redirect
+                 alert("Test Submitted! (Simulation)");
+                 window.location.href = 'analytics.html'; // Redirect to results/analytics
+            }
+         });
+
+        // Initial display
+        if(questionTextEl) { // Ensure elements exist before running
+            displayQuestion(0);
+        }
+    </script>
+</body>
+</html>

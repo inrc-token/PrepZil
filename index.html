@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login -  PrepZil</title>
+    <link rel="stylesheet" href="\css\styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <header class="auth-header">
+            <!-- Optional: <img src="images/logo.png" alt=" PrepZil
+             Logo" class="logo"> -->
+            <h1> PrepZil
+            
+            </h1>
+            <h2>Welcome Back!</h2>
+        </header>
+
+        <main class="auth-main">
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                 <p class="error-message" id="login-error"></p>
+                <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="register.html">Sign Up</a></p>
+            <p class="auth-switch"><a href="#">Forgot Password?</a></p> <!-- Link won't work without backend -->
+        </main>
+    </div>
+
+    <script src="\js\script.js"></script>
+</body>
+</html>

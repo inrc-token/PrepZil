@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head, Header (like dashboard.html), Footer (like dashboard.html) -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussions -  PrepZil
+        
+    </title>
+    <link rel="stylesheet" href="\css\styles.css">
+</head>
+<body>
+     <!-- Add Header (similar to dashboard.html, adjust active link) -->
+    <header class="main-header">
+         <!-- ... header content ... -->
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="mock-tests.html">Mock Tests</a></li>
+                <li><a href="discussions.html" class="active">Discussions</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+            </ul>
+        </nav>
+        <!-- ... profile & mobile toggle ... -->
+    </header>
+
+    <main class="container">
+        <h1>Study Discussions</h1>
+        <button class="btn btn-primary" style="margin-bottom: 20px;">Start New Discussion</button> <!-- Won't work -->
+
+        <section class="discussion-list">
+            <div class="card discussion-thread">
+                <div class="thread-header">
+                    <h3><a href="#">Tips for Solving Thermodynamics Problems?</a></h3>
+                    <span class="thread-meta">Started by Jane Doe | Physics | 15 Replies | Last active: 2 hours ago</span>
+                </div>
+                 <p class="thread-excerpt">I'm really struggling with the first law applications. Does anyone have a good approach or resources?...</p>
+                 <button class="btn-upvote" aria-label="Upvote Thread">👍 <span class="upvote-count">25</span></button>
+            </div>
+
+             <div class="card discussion-thread">
+                <div class="thread-header">
+                    <h3><a href="#">Best Resources for Organic Chemistry Nomenclature</a></h3>
+                    <span class="thread-meta">Started by John Smith | Chemistry | 8 Replies | Last active: 1 day ago</span>
+                </div>
+                 <p class="thread-excerpt">Looking for videos or websites that clearly explain IUPAC naming rules. Any recommendations?...</p>
+                 <button class="btn-upvote" aria-label="Upvote Thread">👍 <span class="upvote-count">18</span></button>
+            </div>
+
+            <!-- Add more static thread examples -->
+             <div class="card discussion-thread">
+                <div class="thread-header">
+                    <h3><a href="#">How to Manage Time During Full Syllabus Tests?</a></h3>
+                    <span class="thread-meta">Started by Alex Lee | General | 22 Replies | Last active: 5 hours ago</span>
+                </div>
+                 <p class="thread-excerpt">I always run out of time in the math section. What strategies do you use to keep pace?...</p>
+                 <button class="btn-upvote" aria-label="Upvote Thread">👍 <span class="upvote-count">31</span></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add Footer (like dashboard.html) -->
+    <footer class="main-footer">
+        <!-- ... footer content ... -->
+    </footer>
+
+    <script src="\js\script.js"></script>
+</body>
+</html>

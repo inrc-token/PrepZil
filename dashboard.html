@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard -  PrepZil</title>
+    <link rel="stylesheet" href="\css\styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+             <!-- Optional: <img src="images/logo.png" alt=" PrepZil Logo" class="logo-main"> -->
+             <span class="platform-name"> PrepZil</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="mock-tests.html">Mock Tests</a></li>
+                <li><a href="discussions.html">Discussions</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+            </ul>
+        </nav>
+        <div class="profile-container">
+             <!-- Placeholder -->
+            <img src="images/avatar.png" alt="User Avatar" class="avatar">
+            <span id="username-display">User</span>
+            <button id="logout-button" class="btn btn-secondary btn-small">Logout</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+    </header>
+
+    <main class="container">
+        <h1>Welcome back, <span id="username-greeting">User</span>!</h1>
+        <p class="motivational-quote">"The expert in anything was once a beginner." Keep pushing!</p>
+
+        <section class="dashboard-grid">
+            <div class="card dashboard-card">
+                <h2>Overall Progress</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 65%;">65%</div> <!-- Static Example -->
+                </div>
+                <p>Keep up the great work!</p>
+            </div>
+
+            <div class="card dashboard-card">
+                <h2>Upcoming Tests</h2>
+                <ul>
+                    <li>Physics Mock Test 3 - Due Oct 28</li>
+                    <li>Full Syllabus Test 1 - Due Nov 5</li>
+                </ul>
+                <a href="mock-tests.html" class="btn btn-secondary">View All Tests</a>
+            </div>
+
+            <div class="card dashboard-card">
+                <h2>Recent Activity</h2>
+                <ul>
+                    <li>Completed: Chemistry Mock Test 2</li>
+                    <li>Joined Discussion: "Effective Study Habits"</li>
+                    <li>Badge Earned: "Test Starter"</li>
+                </ul>
+                 <a href="analytics.html" class="btn btn-secondary">View Analytics</a>
+            </div>
+
+             <div class="card dashboard-card">
+                <h2>Achievements</h2>
+                <div class="badge-container">
+                    <img src="images/badge-icon.png" alt="Badge" title="Test Starter">
+                     <img src="images/badge-icon.png" alt="Badge" title="Forum Participant" class="badge-locked"> <!-- Example of locked -->
+                    <span>More badges await!</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2023  PrepZil. All rights reserved.</p>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+    </footer>
+
+    <script src="\js\script.js"></script>
+</body>
+</html>

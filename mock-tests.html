@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head, Header (like dashboard.html), Footer (like dashboard.html) -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Tests -  PrepZilp</title>
+    <link rel="stylesheet" href="\css\styles.css">
+</head>
+<body>
+    <!-- Add Header (similar to dashboard.html, adjust active link) -->
+    <header class="main-header">
+        <!-- ... header content ... -->
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="mock-tests.html" class="active">Mock Tests</a></li>
+                <li><a href="discussions.html">Discussions</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+            </ul>
+        </nav>
+        <!-- ... profile & mobile toggle ... -->
+    </header>
+
+    <main class="container">
+        <h1>Available Mock Tests</h1>
+        <div class="filters">
+            <label for="subject-filter">Filter by Subject:</label>
+            <select id="subject-filter">
+                <option value="all">All Subjects</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="math">Mathematics</option>
+            </select>
+            <!-- Add more filters if needed (Difficulty etc) -->
+        </div>
+
+        <section class="test-list">
+            <div class="card test-card" data-subject="physics">
+                <h2>Physics Mock Test 1</h2>
+                <p>Covers Kinematics and Newton's Laws. Difficulty: Medium.</p>
+                <a href="test-interface.html" class="btn btn-primary">Take Test</a>
+            </div>
+            <div class="card test-card" data-subject="chemistry">
+                <h2>Chemistry Mock Test 1</h2>
+                <p>Focuses on Atomic Structure and Bonding. Difficulty: Easy.</p>
+                 <a href="test-interface.html" class="btn btn-primary">Take Test</a>
+            </div>
+             <div class="card test-card" data-subject="math">
+                <h2>Mathematics Mock Test 1</h2>
+                <p>Algebra fundamentals and basic Calculus. Difficulty: Medium.</p>
+                 <a href="test-interface.html" class="btn btn-primary">Take Test</a>
+            </div>
+             <div class="card test-card" data-subject="physics">
+                <h2>Physics Mock Test 2</h2>
+                <p>Work, Energy, Power and Rotational Motion. Difficulty: Hard.</p>
+                 <a href="test-interface.html" class="btn btn-primary">Take Test</a>
+            </div>
+            <!-- Add more test cards -->
+        </section>
+    </main>
+
+    <!-- Add Footer (like dashboard.html) -->
+    <footer class="main-footer">
+         <!-- ... footer content ... -->
+    </footer>
+
+    <script src="\js\script.js"></script>
+</body>
+</html>
